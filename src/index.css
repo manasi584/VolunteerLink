@@ -1,0 +1,288 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    
+  }
+  
+h1{
+    margin:2%;
+}
+
+
+/*Navbar*/
+
+
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  thead th {
+    position: relative;
+  }
+  
+  thead th span.info-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: #e0e0e0;
+    color: #666;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 16px;
+    margin-left: 5px;
+  }
+  
+  .status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #fff;
+  }
+  
+  .status.done {
+    background-color: #28a745;
+  }
+  .status.pending {
+    background-color: #d8614c;
+  }
+  
+ 
+  
+ 
+  
+ 
+
+  /*Dashboard*/
+
+  
+  .dashboard {
+    margin:2%;
+    display: flex;
+    gap:5%;
+    padding-left:25%;
+    padding-right:25%;
+  }
+
+.card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .content h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: #333;
+  }
+  
+  .content p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 5px 0 0;
+  }
+  
+
+  .all-cards{
+    display:flex;
+     gap:10px;
+     padding:10px;
+  }
+
+
+  /* AvailableJobsCard */
+.available-jobs-card {
+    background:#e3f2fd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    padding: 20px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    min-height: 100px;
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    min-width: 30px;
+  }
+  
+  .card-header h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #333;
+  }
+  
+  .today-button {
+    background-color:#608BC1;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .today-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .job-list {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  .job-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .job-item:last-child {
+    border-bottom: none;
+  }
+  
+  .job-content h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .job-content p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .time {
+    color: #007bff;
+    font-size: 0.85rem;
+  }
+  
+  .time-remaining {
+    font-size: 0.85rem;
+    color: #888;
+    white-space: nowrap;
+  }
+
+  .recommend-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+   
+  }
+  
+  
+  
+
+  .ngo-card {
+    background:#e3f2fd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    padding: 20px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    min-height: 100px;
+  }
+  
+  .ngo-title {
+    font-size: 20px;
+    color: #333333;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .ngo-name {
+    font-size: 18px;
+    color: #4CAF50;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .ngo-description {
+    font-size: 16px;
+    color: #555555;
+    font-style: italic;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .ngo-details {
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .ngo-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .ngo-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: background 0.3s;
+  }
+  
+  .ngo-btn:hover {
+    background: #45a049;
+  }
+    
