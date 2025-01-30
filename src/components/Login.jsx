@@ -15,25 +15,31 @@ const Login = ({ setIsLoggedIn }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 console.log("****")
-    try {
-      console.log("*")
-      // Send the login credentials to the backend API using Axios
-      const response = await axios.post('http://localhost:8000/api/auth/login/volunteer', formData);
-      console.log('Response Status:', response.status);  // Debug the response status
-      
-      // If login is successful, the API should return a success response
-      if (response.status === 200) {
-        console.log('Login successful');
-        setIsLoggedIn(true); // Update the login state
-        alert("Login successful!");
-        
-        // Optionally, store JWT token or user details in localStorage for session management
-        localStorage.setItem('userToken', response.data.token);  // Assuming the response includes a JWT token
-        navigate("/dashboard"); // Redirect to dashboard after successful login
+
+   if (formData.email === "test2@example.com" && formData.password === "password1234") {
+      setIsLoggedIn(true); // Update the login state
+      alert("NGO login successful!");
+      navigate("/ngo/dashboard"); // Redirect to NGO dashboard
+    } else {
+      // If not NGO, proceed with volunteer login using backend API
+      try {
+        // Send the login credentials to the backend API using Axios for volunteer login
+        const response = await axios.post("http://localhost:8000/api/auth/login/volunteer", formData);
+        console.log("Response Status:", response.status); // Debug the response status
+
+        if (response.status === 200) {
+          console.log("Login successful");
+          setIsLoggedIn(true); // Update the login state
+          alert("Login successful!");
+
+          // Store JWT token or user details in localStorage for session management
+          localStorage.setItem("userToken", response.data.token); // Assuming the response includes a JWT token
+          navigate("/dashboard"); // Redirect to volunteer dashboard after successful login
+        }
+      } catch (error) {
+        console.error("Login error:", error.response ? error.response.data : error.message);
+        setErrorMessage("Invalid email or password. Please try again."); // Show error message if login fails
       }
-    } catch (error) {
-      console.error("Login error:", error.response ? error.response.data : error.message);
-      setErrorMessage("Invalid email or password. Please try again.");  // Show error message if login fails
     }
   };
   
