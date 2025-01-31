@@ -72,7 +72,7 @@ console.log("****")
             color: "#4A4A4A",
           }}
         >
-          Login as Volunteer
+          Login 
         </h2>
 
         {/* Show error message if login fails */}
