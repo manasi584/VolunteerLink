@@ -19,7 +19,7 @@ const app=express();
 const PORT=8000;
 
 //Database
-connectMongoDB(process.env.DATABASE_URL);
+connectMongoDB(process.env.DATABASE_URI);
 
 //Templating engine
 app.set('view engine','ejs');
