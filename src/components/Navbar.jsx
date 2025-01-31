@@ -1,7 +1,9 @@
 import React from "react";
 import "./Navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ onProfileClick }) => {
+  console.log("Navbar loaded. onProfileClick exists?", !!onProfileClick); // Debug log
+
   return (
     <nav className="navbar">
       <div className="logo">VolunteerLink</div>

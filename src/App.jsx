@@ -8,7 +8,7 @@ import Dashboard from "./components/Dashboard";
 import NGOWrapper from "./components/NGOWrapper";
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <Router>
