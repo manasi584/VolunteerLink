@@ -46,13 +46,13 @@ const Dashboard = () => {
             <ListItemText primary="Current Location: New York, USA" />
           </ListItem>
           <ListItem>
-            <ListItemText primary="Skills: Teaching, Fundraising, Event Management" />
+            <ListItemText primary="Skills: Graphic Designing, Canva" />
           </ListItem>
           <ListItem>
             <ListItemText primary="Preferred Volunteering: Offline" />
           </ListItem>
           <ListItem>
-            <ListItemText primary="Hours Contributed: 50 Hours" />
+            <ListItemText primary="Hours Contributed: 0 Hours" />
           </ListItem>
           <ListItem>
             <ListItemText primary="Verified Volunteer: ✅ Yes" />

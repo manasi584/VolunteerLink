@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 const ImpactDash = () => {
-  const volunteerId="679bb2bbb932deb55cff7404";
+  
+  const volunteerId = "679c891df9bf773da95df622";
+  
+  console.log(document.cookies);
   const [data, setData] = useState({
     tasksCompleted: 0,
     hoursContributed: 0,
@@ -13,12 +17,12 @@ const ImpactDash = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/volunteer/impact-dash/${volunteerId}`) 
+      .get(`http://localhost:8000/api/volunteer/impact-dash/${volunteerId}`)
       .then((response) => {
         setData({
           tasksCompleted: response.data.tasksCompleted,
           hoursContributed: response.data.hoursContributed,
-          badgesEarned: response.data.badgesEarned,
+          badgesEarned: response.data.badges,
         });
         setLoading(false);
       })
@@ -38,9 +42,24 @@ const ImpactDash = () => {
   }
 
   const cards = [
-    { icon: "✔️", color: "#007bff", value: data.tasksCompleted, label: "Tasks Completed" },
-    { icon: "⌛", color: "#ffa500", value: data.hoursContributed, label: "Hours Contributed" },
-    { icon: "🛡️", color: "#00c1c1", value: data.badgesEarned, label: "Badges Earned" },
+    {
+      icon: "✔️",
+      color: "#007bff",
+      value: data.tasksCompleted,
+      label: "Tasks Completed",
+    },
+    {
+      icon: "⌛",
+      color: "#ffa500",
+      value: data.hoursContributed,
+      label: "Hours Contributed",
+    },
+    {
+      icon: "🛡️",
+      color: "#00c1c1",
+      value: data.badgesEarned,
+      label: "Badges Earned",
+    },
   ];
 
   return (

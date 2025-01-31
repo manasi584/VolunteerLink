@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const CurrTasks = () => {
-  const volunteerId="679bb2bbb932deb55cff7404";
+  const volunteerId = "679c891df9bf773da95df622";
   const [tasks, setTasks] = useState([]);
   
   useEffect(() => {
@@ -28,7 +28,7 @@ const CurrTasks = () => {
           <tr>
             <th>Task</th>
             <th>Deadline <span className="info-icon">i</span></th>
-            <th>Status</th>
+      
             <th>Mode</th>
           </tr>
         </thead>
@@ -38,11 +38,7 @@ const CurrTasks = () => {
               <tr key={task._id}>
                 <td>{task.title}</td>
                 <td>{new Date(task.deadline).toLocaleDateString()}</td>
-                <td>
-                  <span className={`status ${task.status.toLowerCase()}`}>
-                    {task.status}
-                  </span>
-                </td>
+      
                 <td>{task.isRemote ? "Remote" : "On-Site"}</td>
               </tr>
             ))
