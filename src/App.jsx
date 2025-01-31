@@ -5,6 +5,7 @@ import Contact from "./components/Contact";
 import Login from "./components/Login";
 import Signup from "./components/SignUp";
 import Dashboard from "./components/Dashboard";
+import NGOWrapper from "./components/NGOWrapper";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); 
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <Login setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path="/ngo/dashboard" element={isLoggedIn ? <NGOWrapper /> : <Login setIsLoggedIn={setIsLoggedIn} />} />
       </Routes>
     </Router>
   );
