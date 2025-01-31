@@ -6,7 +6,7 @@ const router=express.Router();
 
 router.get("/",handleGetAllTasks);
 router.post("/:ngoId",handlePostTask);
-router.post("/accepted/:volunteerId",handleCurrentJobs);
+router.get("/accepted/:volunteerId",handleCurrentJobs);
 
 
 

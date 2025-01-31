@@ -1,6 +1,6 @@
 const Volunteer = require("../models/volunteer");
 const NGO = require("../models/ngo");
-const { createTokenForUser } = require("../services/authentication");
+const { createTokenForUser } = require("../middlewares/auth");
 
 async function handleVolunteerSignin(req,res){
     const { email, password} = req.body;
@@ -8,16 +8,21 @@ async function handleVolunteerSignin(req,res){
     try {
         const user = await Volunteer.findOne({ email });
         if (!user) throw new Error("User not found");
-       console.log(user);
-        const isMatched = Volunteer.matchPassword(password, user);
+     
+        const isMatched = password===user.password;
 
         if (isMatched) {
             const token = createTokenForUser(user);
-            console.log("*")
+           res.cookie("token", token, {
+            httpOnly: true, // Prevents access from JavaScript (XSS protection)
+            secure: false, // Set to `true` in production (requires HTTPS)
+            sameSite: "None", // Needed for cross-origin cookies
+          });
             return res.status(200).json({msg:"Login successful"});
         }
         else throw new Error("incorrect password");
     }
+    
     catch (error) {
         return res.json({
             error:"Incorrect email or password"

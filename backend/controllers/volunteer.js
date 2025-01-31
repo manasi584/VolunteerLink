@@ -39,6 +39,7 @@ async function handleGetVolunteerImpact(req,res){
     
     const volunteerId=req.params.id;
     const volun=await Volunteer.findById(volunteerId);
+   console.log(volun);
    
     const volunteerObjectId = new mongoose.Types.ObjectId(volunteerId);
 
@@ -53,7 +54,7 @@ const tasks = await Task.aggregate([
     return res.json({
         tasksCompleted:tasks.length,
         hoursContributed: totalHours,
-        badgesEarned: volun.badges.length > 0 ? volun.badges.length : 0,
+        badges: volun.badges.length > 0 ? volun.badges.length : 0,
     });
 
 }

@@ -5,7 +5,7 @@ const secret=process.env.AUTH_SECRET;
 function createTokenForUser(user){
 const payload={
     _id:user._id,
-    fullName:user.fullName,
+    name:user.name,
     email:user.email,
 }
 
