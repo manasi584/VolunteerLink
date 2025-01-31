@@ -1,0 +1,122 @@
+POST /api/auth/register/volunteer✔️✨
+POST /api/auth/register/ngo✔️✨
+POST /api/auth/login/volunteer✔️✨
+POST /api/auth/login/ngo
+POST /api/auth/logout
+POST /api/auth/forgot-password
+Sends a password reset link to the user's email.
+POST /api/auth/reset-password
+Updates the user’s password after verification.
+
+GET /api/volunteers/impact-dash/:id✔️✨
+GET /api/volunteers/update-skills/:id✔️
+GET /api/volunteers/:id✔️✨
+Fetches volunteer details including skills, availability, and completed tasks.
+PUT /api/volunteers/:id
+Allows volunteers to update their skills, preferences, and availability.
+GET /api/volunteers
+Admins or NGOs can fetch all registered volunteers.
+
+
+
+GET /api/ngos/:id
+  - Fetches details about a specific NGO, including mission statement and active volunteer opportunities.  
+PUT /api/ngos/:id 
+  - Allows NGOs to update their organization details.  
+GET /api/ngos (admin only)
+  - Fetch all registered NGOs.  
+
+
+GET /api/tasks/accepted/:volunteerId ✔️
+  -fetch all current tasks for a volunteer
+POST /api/tasks/:ngoId(NGOs only) ✔️✨
+  - Adds a new volunteering opportunity to the platform.  
+- **Payload Example**:  
+  ```json
+  {
+    "title": "Graphic Designer Needed",
+    "description": "Help us create social media graphics for our campaign.",
+    "requiredSkills": ["Graphic Design", "Adobe Photoshop"],
+    "ngoId": "ngo123",
+    "isRemote": true,
+    "deadline": "2025-02-10"
+  }
+  ```
+
+
+GET /api/tasks` ✔️
+  - Fetch all available volunteer tasks.
+GET /api/tasks/:id ✔️
+  - Fetches details of a specific task.  
+POST /api/tasks/:id/apply`** *(Volunteers only)*  
+  - Allows volunteers to apply for a task.  
+
+
+GET /api/recommendations/:volunteerId ✔️
+- Uses AI to suggest tasks based on volunteer skills and preferences.  
+
+
+
+### 🔹 **Get All Applications for a Task**
+- **`GET /api/tasks/:id/applications`** *(NGOs only)*  
+  - Fetches all volunteer applications for a specific task.  
+### 🔹 **Approve/Reject Volunteer Application**
+- **`PUT /api/tasks/:id/approve/:volunteerId`** *(NGOs only)*  
+  - Marks a volunteer as "Accepted" or "Rejected".  
+
+---
+
+### 🔹 **Get Recommended Tasks for a Volunteer**
+- **``**  
+  
+
+### 🔹 **Get Recommended Volunteers for a Task**
+- **`GET /api/recommendations/task/:taskId`**  
+  - Suggests the best-matching volunteers for a given task.  
+
+---
+
+## **6. Gamification & Impact Tracking APIs**
+### 🔹 **Get Volunteer Achievements**
+- **`GET /api/volunteers/:id/achievements`**  
+  - Fetches badges earned, total hours contributed, and completed tasks.  
+
+### 🔹 **Leaderboard API**
+- **`GET /api/leaderboard`**  
+  - Ranks top volunteers based on hours contributed and tasks completed.  
+
+---
+
+## **7. Notifications API**
+### 🔹 **Get User Notifications**
+- **`GET /api/notifications/:userId`**  
+  - Fetches volunteer or NGO notifications (e.g., task approvals, messages).  
+
+### 🔹 **Send a Notification**
+- **`POST /api/notifications`**  
+  - Used internally to notify users when a new task matches their profile.  
+
+---
+
+## **8. Messaging API**
+### 🔹 **Send a Message**
+- **`POST /api/messages`**  
+  - Enables direct communication between NGOs and volunteers.  
+
+### 🔹 **Get Conversation Threads**
+- **`GET /api/messages/:userId`**  
+  - Fetches all chat conversations for a user.  
+
+
+
+PUT /api/admin/verify-ngo/:ngoId 
+  - Marks an NGO as verified after validation.  
+DELETE /api/admin/users/:id
+  - Allows an admin to remove a volunteer or NGO from the platform.  
+
+
+GET /api/stats
+  - Fetches stats like:
+    - Total volunteers registered
+    - Total NGOs onboarded
+    - Total tasks completed  
