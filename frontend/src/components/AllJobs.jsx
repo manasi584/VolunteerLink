@@ -9,7 +9,7 @@ const AllJobs = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/tasks");
+        const response = await axios.get("https://volunteerlink.onrender.com/api/tasks");
         setJobs(response.data.tasks); 
       } catch (err) {
         setError("Failed to fetch jobs");
