@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+
+
+const URL = import.meta.env.VITE_URL;
+
 const CurrTasks = () => {
   const volunteerId = "679c891df9bf773da95df622";
   const [tasks, setTasks] = useState([]);
@@ -9,7 +13,7 @@ const CurrTasks = () => {
     const fetchTasks = async () => {
       try {
         const response = await axios.get(
-          `https://volunteerlink.onrender.com/api/tasks/accepted/${volunteerId}`
+          `${URL}/api/tasks/accepted/${volunteerId}`
         );
         setTasks(response.data.tasks);
       } catch (error) {

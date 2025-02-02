@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Cookies from "js-cookie";
+
+
+const URL = import.meta.env.VITE_URL;
 
 const ImpactDash = () => {
   
@@ -17,7 +19,7 @@ const ImpactDash = () => {
 
   useEffect(() => {
     axios
-      .get(`https://volunteerlink.onrender.com/api/volunteer/impact-dash/${volunteerId}`)
+      .get(`${URL}/api/volunteer/impact-dash/${volunteerId}`)
       .then((response) => {
         setData({
           tasksCompleted: response.data.tasksCompleted,

@@ -18,7 +18,7 @@ const taskRoute=require("./routes/task");
 
 
 const app=express();
-const PORT=8001;
+const PORT=8000;
 
 //Database
 connectMongoDB(process.env.DATABASE_URI);

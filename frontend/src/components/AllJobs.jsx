@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+
+const URL = import.meta.env.VITE_URL;
+
 const AllJobs = () => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -9,7 +12,7 @@ const AllJobs = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await axios.get("https://volunteerlink.onrender.com/api/tasks");
+        const response = await axios.get(`${URL}/api/tasks`);
         setJobs(response.data.tasks); 
       } catch (err) {
         setError("Failed to fetch jobs");
