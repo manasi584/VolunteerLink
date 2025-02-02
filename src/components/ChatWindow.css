@@ -1,0 +1,93 @@
+/* Chat Button */
+.body{
+  font-family: 'Roboto', sans-serif;
+}
+.chat-button {
+  font-size: 24px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #007bff;
+}
+
+/* Modal Overlay (Dimmed Background) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Box (Chat Card) */
+.chat-modal {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1100;
+  position: relative;
+}
+
+/* Chat Window */
+.chat-window {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.chat-body {
+  
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.message {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.message.sent {
+
+  background-color: #e0f7fa;
+  text-align: right;
+}
+
+.message.received {
+
+  background-color: #f1f1f1;
+  text-align: left;
+}
+
+.chat-footer {
+  display: flex;
+  align-items: center;
+}
+
+.chat-footer input {
+  flex: 1;
+  padding: 8px;
+  margin-right: 10px;
+}
+
+.chat-footer button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
